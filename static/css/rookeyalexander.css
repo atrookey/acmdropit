@@ -1,0 +1,25 @@
+body {
+  background-image: url("../img/bg.jpg");
+  background-size: cover;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #100D12;
+}
+
+#content {
+  padding-top: 64px;
+}
+
+.box {
+  background-color: #EBFCFF;
+}
+
+.navbar-default {
+  background-color: #100D12;
+}
+
+.navbar {
+  min-height: 64px;
+  border: none;
+}
