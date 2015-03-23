@@ -9,7 +9,7 @@ RANGE = 1
 client = pymongo.MongoClient(MONGODB_URI)
 db = client.get_default_database()
 
-@app.route('/get_image', methods=['GET'])
+@app.route('/getimage', methods=['GET'])
 def get_image():
   latitude = request.args.get('latitude')
   longitude = request.args.get('longitude')
@@ -27,7 +27,7 @@ def get_image():
   db.images.remove({'_id':image_doc.get('_id')})
   return jsonify({'image': image_doc.get('image')})
 
-@app.route('/store_image', methods=['POST'])
+@app.route('/storeimage', methods=['POST'])
 def store_image():
   latitude = request.form['latitude']
   longitude = request.form['longitude']
