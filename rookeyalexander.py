@@ -3,6 +3,8 @@ import pymongo
 
 app = Flask(__name__)
 
+MONGODB_URI = 'mongodb://heroku_app35160490:n52q2opnmfvpluv4rvvfthi2p4@ds035240.mongolab.com:35240/heroku_app35160490'
+
 client = pymongo.MongoClient(MONGODB_URI)
 db = client.get_default_database()
 
