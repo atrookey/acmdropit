@@ -1,8 +1,10 @@
 from flask import Flask, render_template
-from flask.ext.pymongo import PyMongo
+import pymongo
 
 app = Flask(__name__)
-mongo = PyMongo(app)
+
+client = pymongo.MongoClient(MONGODB_URI)
+db = client.get_default_database()
 
 @app.route('/')
 def home():
@@ -14,5 +16,3 @@ def contact():
 
 if __name__ == '__main__':
   app.run()
-
-print app.name
