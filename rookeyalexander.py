@@ -29,15 +29,18 @@ def get_image():
 
 @app.route('/storeimage', methods=['POST'])
 def store_image():
-  latitude = request.form['latitude']
-  longitude = request.form['longitude']
-  image = request.form['image']
-  latitude = float(latitude)
-  longitude = float(longitude)
-  post = {'latitude': latitude,
-          'longitude': longitude,
-          'image': image }
-  db.images.insert(post)
+  try:
+    latitude = request.form['latitude']
+    longitude = request.form['longitude']
+    image = request.form['image']
+    latitude = float(latitude)
+    longitude = float(longitude)
+    post = {'latitude': latitude,
+            'longitude': longitude,
+            'image': image }
+    db.images.insert(post)
+  except:
+    return 'post unsuccessful'
   return 'post successful'
 
 if __name__ == '__main__':
